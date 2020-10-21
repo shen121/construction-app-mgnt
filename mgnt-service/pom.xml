@@ -16,6 +16,8 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <pageHelper.version>5.1.0</pageHelper.version>
+        <fastjson.version>1.2.70</fastjson.version>
     </properties>
 
     <dependencies>
@@ -23,17 +25,39 @@
         <dependency>
             <groupId>com.demo.mgnt-api</groupId>
             <artifactId>mgnt-api</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <!--mgnt-dao-->
         <dependency>
             <groupId>com.demo.mgnt-dao</groupId>
             <artifactId>mgnt-dao</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <!--web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!--actuator-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator</artifactId>
+        </dependency>
+
+        <!-- pagehelper -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pageHelper.version}</version>
+        </dependency>
+
+        <!--fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
