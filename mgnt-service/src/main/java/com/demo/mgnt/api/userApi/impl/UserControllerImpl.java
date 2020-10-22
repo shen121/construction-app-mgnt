@@ -5,9 +5,9 @@ import com.demo.mgnt.api.userApi.respDto.UserRespDtp;
 import com.demo.mgnt.api.util.RestResponse;
 import com.demo.mgnt.service.userService.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
 
-@Service
+@RestController
 public class UserControllerImpl implements UserController {
 
     @Autowired

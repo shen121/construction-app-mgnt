@@ -28,7 +28,7 @@ public class TokenAuthFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        try {
+        /*try {
             HttpServletRequest request= (HttpServletRequest) servletRequest;
             String token = request.getHeader("token");
             if(token==null || "".equals(token)){
@@ -48,9 +48,9 @@ public class TokenAuthFilter implements Filter {
             servletResponse.getWriter().close();
             servletResponse.flushBuffer();
             return;
-        }
+        }*/
 
-       // filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest,servletResponse);
     }
 
     @Override
