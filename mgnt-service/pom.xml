@@ -18,6 +18,7 @@
         <java.version>1.8</java.version>
         <pageHelper.version>5.1.0</pageHelper.version>
         <fastjson.version>1.2.70</fastjson.version>
+        <jwt.version>3.8.3</jwt.version>
     </properties>
 
     <dependencies>
@@ -27,17 +28,20 @@
             <artifactId>mgnt-api</artifactId>
             <version>${project.version}</version>
         </dependency>
+
         <!--mgnt-dao-->
         <dependency>
             <groupId>com.demo.mgnt-dao</groupId>
             <artifactId>mgnt-dao</artifactId>
             <version>${project.version}</version>
         </dependency>
+
         <!--web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <!--actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -58,6 +62,12 @@
             <version>${fastjson.version}</version>
         </dependency>
 
+        <!-- jwt -->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${jwt.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

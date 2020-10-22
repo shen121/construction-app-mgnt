@@ -1,4 +1,4 @@
-package com.demo.mgnt.api.config.util;
+package com.demo.mgnt.api.util;
 
 import java.io.Serializable;
 
