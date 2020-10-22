@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  *    token
  */
-@RequestMapping("/v1/user")
+@RequestMapping("/v1/token")
 public interface TokenController {
 
     //通过token获取用户信息

@@ -19,7 +19,7 @@ public class UserControllerImpl implements UserController {
     }
 
     @Override
-    public RestResponse<String> getUse1r() {
+    public RestResponse<String> getUser() {
         return new RestResponse<>(" return new RestResponse<>(userService.getUser(id));");
     }
 }
