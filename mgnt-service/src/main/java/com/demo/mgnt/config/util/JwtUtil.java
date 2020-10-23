@@ -7,7 +7,7 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.auth0.jwt.interfaces.JWTVerifier;
 import com.demo.mgnt.api.userApi.reqDto.UserReqDto;
-import com.demo.mgnt.api.userApi.respDto.UserRespDtp;
+import com.demo.mgnt.api.userApi.respDto.UserRespDto;
 import com.demo.mgnt.config.exception.TokenAuthErrorException;
 import com.demo.mgnt.dao.userDao.eo.UserEo;
 import org.slf4j.Logger;
@@ -41,9 +41,9 @@ public class JwtUtil {
      * 生成签名,30分钟后过期
      */
     public static <U>String sign(U u){
-        System.out.println(!(u instanceof UserReqDto) || !(u instanceof UserRespDtp) || !(u instanceof UserEo));
-        System.out.println(!(u instanceof UserReqDto) +"---"+ !(u instanceof UserRespDtp) +"---"+ !(u instanceof UserEo));
-        if(!(u instanceof UserReqDto) || !(u instanceof UserRespDtp) || !(u instanceof UserEo)){
+        System.out.println(!(u instanceof UserReqDto) || !(u instanceof UserRespDto) || !(u instanceof UserEo));
+        System.out.println(!(u instanceof UserReqDto) +"---"+ !(u instanceof UserRespDto) +"---"+ !(u instanceof UserEo));
+        if(!(u instanceof UserReqDto) || !(u instanceof UserRespDto) || !(u instanceof UserEo)){
             return null;
         }
         //过期时间

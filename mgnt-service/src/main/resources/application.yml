@@ -13,3 +13,11 @@ logging:
       demo:
         mgnt:
           dao: debug
+
+
+swagger:
+  title: 后台管理系统 Api
+  description: model Api
+  version: 1.0.0
+  license: Apache 2.0
+  licenseUrl: http://www.apache.org/licenses/LICENSE-2.0

@@ -1,8 +1,12 @@
 package com.demo.mgnt.service.userService;
 
-import com.demo.mgnt.api.userApi.respDto.UserRespDtp;
+import com.demo.mgnt.api.userApi.respDto.UserRespDto;
+import com.github.pagehelper.PageInfo;
+
 
 public interface UserService {
 
-    UserRespDtp getUser(Long id);
+    UserRespDto getUserById(Long id);
+
+    PageInfo<UserRespDto> getAllUser(Integer pageSize, Integer pageNum);
 }

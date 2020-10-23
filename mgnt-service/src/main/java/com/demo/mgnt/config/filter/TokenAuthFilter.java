@@ -6,6 +6,7 @@ import com.demo.mgnt.config.exception.TokenAuthErrorException;
 import com.demo.mgnt.config.util.JwtUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.core.annotation.Order;
 
 import javax.servlet.*;

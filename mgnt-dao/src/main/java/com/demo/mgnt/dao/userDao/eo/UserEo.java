@@ -1,13 +1,30 @@
 package com.demo.mgnt.dao.userDao.eo;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value = "UserEo", description = "UserEo对象")
 public class UserEo{
 
+    @ApiModelProperty(name = "id", value = "ID")
     private Long id;
+
+    @ApiModelProperty(name = "name", value = "姓名")
     private String name;
+
+    @ApiModelProperty(name = "pwd", value = "密码")
     private String pwd;
+
+    @ApiModelProperty(name = "currentToken", value = "当前token")
     private String currentToken;
+
+    @ApiModelProperty(name = "tel", value = "手机号")
     private String tel;
+
+    @ApiModelProperty(name = "areaCode", value = "所在地Code")
     private String areaCode;
+
+    @ApiModelProperty(name = "area", value = "所在地")
     private String area;
 
     public Long getId() {

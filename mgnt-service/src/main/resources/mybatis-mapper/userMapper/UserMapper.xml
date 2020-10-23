@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.mgnt.dao.userDao.UserMapper">
 
-    <!--<select id="getUser" resultType="com.demo.mgnt.dao.userDao.eo.UserEo">
+    <!--<select id="getUserById" resultType="com.demo.mgnt.dao.userDao.eo.UserEo">
         SELECT * FROM v1_user where id=#{userId}
     </select>-->
 
