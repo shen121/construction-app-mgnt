@@ -13,7 +13,7 @@ class MgntServiceApplicationTests {
     @Test
     void contextLoads() {
         UserEo userEo=new UserEo();
-        UserRespDto respDtp = DtoHelper.EoToDto(userEo, UserEo.class, UserRespDto.class);
+        UserRespDto respDtp = DtoHelper.EoToDto(userEo, UserRespDto.class);
 
         System.out.println(new UserServiceImpl().getUserById(111L));
     }

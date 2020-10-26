@@ -7,13 +7,13 @@ import java.util.List;
 
 public class DtoHelper{
 
-    public static <E,D>D EoToDto(E e,Class<E> eClass,Class<D> dClass){
+    public static <E,D>D EoToDto(E e,Class<D> dClass){
         String s = JSON.toJSONString(e);
         D d = JSON.parseObject(s,dClass);
         return d;
     }
 
-    public static <E,D>List<D> EoListToDtoList(List<E> eList,Class<E> eClass,Class<D> dClass){
+    public static <E,D>List<D> EoListToDtoList(List<E> eList,Class<D> dClass){
         List<D> dList=new ArrayList<D>();
         for (E e:eList
              ) {

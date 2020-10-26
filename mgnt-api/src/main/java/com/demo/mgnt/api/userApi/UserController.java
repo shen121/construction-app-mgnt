@@ -16,7 +16,7 @@ import java.util.List;
  *    用户管理api
  */
 @Api(tags = "用户管理api")
-@RequestMapping("/v1/user")
+@RequestMapping("/v1/mgnt/user")
 public interface UserController {
 
     @GetMapping("/{id}")

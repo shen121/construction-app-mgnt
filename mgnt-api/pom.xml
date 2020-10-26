@@ -15,7 +15,7 @@
     <name>mgnt-api</name>
 
     <properties>
-        <swagger.version>2.4.0</swagger.version>
+        <swagger.version>2.9.2</swagger.version>
         <pageHelper.version>1.2.10</pageHelper.version>
     </properties>
 

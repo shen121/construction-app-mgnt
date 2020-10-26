@@ -19,7 +19,7 @@ import java.util.Map;
 
 
 @Order(1)
-@WebFilter(urlPatterns = {"/v1/user/*"})
+@WebFilter(urlPatterns = {"/v1/mgnt/*"})
 public class TokenAuthFilter implements Filter {
     private Logger logger= LoggerFactory.getLogger(TokenAuthFilter.class);
     @Override
@@ -29,27 +29,30 @@ public class TokenAuthFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        /*try {
+        try {
             HttpServletRequest request= (HttpServletRequest) servletRequest;
-            String token = request.getHeader("token");
+            String token = request.getHeader("Auth-token");
             if(token==null || "".equals(token)){
                 throw new TokenAuthErrorException("token not be null");
             }
-            logger.info("token===>>  "+token+"    =========");
             JwtUtil.authToken(token);
+            logger.info("token===>>  "+token+"    =========");
+
         }catch (TokenAuthErrorException e){
             Map<String,String> map=new HashMap<>();
             map.put("respCode", RestResponseEnum.token_error.getCode());
             map.put("respMsg",e.getMessage());
-            servletResponse.getWriter();
+
             servletResponse.setCharacterEncoding("utf-8");
             servletResponse.getWriter().print(JSON.toJSONString(map));
             ((HttpServletResponse)servletResponse).setStatus(401);
+            ((HttpServletResponse)servletResponse).setHeader("date",e.getMessage());
+
             servletResponse.getWriter().flush();
             servletResponse.getWriter().close();
             servletResponse.flushBuffer();
             return;
-        }*/
+        }
 
         filterChain.doFilter(servletRequest,servletResponse);
     }

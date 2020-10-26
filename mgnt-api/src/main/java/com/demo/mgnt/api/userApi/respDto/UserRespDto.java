@@ -14,9 +14,6 @@ public class UserRespDto implements Serializable {
     @ApiModelProperty(name = "name", value = "姓名")
     private String name;
 
-    @ApiModelProperty(name = "pwd", value = "密码")
-    private String pwd;
-
     @ApiModelProperty(name = "currentToken", value = "当前token")
     private String currentToken;
 
@@ -43,14 +40,6 @@ public class UserRespDto implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
     }
 
     public String getCurrentToken() {

@@ -21,3 +21,6 @@ swagger:
   version: 1.0.0
   license: Apache 2.0
   licenseUrl: http://www.apache.org/licenses/LICENSE-2.0
+  contactName: 联系人
+  contactUrl: http://www.baidu.com
+  contactEmail: aaa@gmail.com

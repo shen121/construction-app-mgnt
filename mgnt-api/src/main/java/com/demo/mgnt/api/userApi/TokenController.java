@@ -20,10 +20,10 @@ public interface TokenController {
 
     @PutMapping("/resetToken")
     @ApiOperation(value = "刷新token", notes = "刷新token")
-    RestResponse<String> resetToken(@RequestBody UserReqDto userReqDto);
+    RestResponse<String> resetToken(@RequestParam("current")String token);
 
-    @PostMapping("/getTokenByUser")
-    @ApiOperation(value = "通过用户名密码获取token", notes = "通过用户名密码获取token")
-    RestResponse<String> getTokenByUser(@RequestBody UserReqDto userReqDto);
+    @PostMapping("/generateTokenAndUpdateUser")
+    @ApiOperation(value = "通过用户名和用户id生成token", notes = "通过用户名和用户id生成token")
+    RestResponse<String> generateTokenAndUpdateUser(@RequestBody UserReqDto userReqDto);
 
 }

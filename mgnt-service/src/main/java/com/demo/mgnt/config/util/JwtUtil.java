@@ -24,13 +24,13 @@ import java.util.Map;
  **/
 public class JwtUtil {
 
-    private Logger logger= LoggerFactory.getLogger(JwtUtil.class);
+    private static Logger logger= LoggerFactory.getLogger(JwtUtil.class);
 
     /**
      * 过期时间为一天
-     * TODO 正式上线更换为15分钟
+     * TODO 正式上线更换为30分钟
      */
-    private static final long EXPIRE_TIME = 1*60*1000;
+    private static final long EXPIRE_TIME = 30*60*1000;
 
     /**
      * token私钥
@@ -40,12 +40,8 @@ public class JwtUtil {
     /**
      * 生成签名,30分钟后过期
      */
-    public static <U>String sign(U u){
-        System.out.println(!(u instanceof UserReqDto) || !(u instanceof UserRespDto) || !(u instanceof UserEo));
-        System.out.println(!(u instanceof UserReqDto) +"---"+ !(u instanceof UserRespDto) +"---"+ !(u instanceof UserEo));
-        if(!(u instanceof UserReqDto) || !(u instanceof UserRespDto) || !(u instanceof UserEo)){
-            return null;
-        }
+    public static String sign(Long userId,String userName){
+
         //过期时间
         Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
         //私钥及加密算法
@@ -55,17 +51,23 @@ public class JwtUtil {
         header.put("typ", "JWT");
         header.put("alg", "HS256");
         //附带username和userID生成签名
-        return JWT.create().withHeader(header).withClaim("user",JSON.toJSONString(u))
+        return JWT.create().withHeader(header)
+                .withClaim("userId",userId)
+                .withClaim("userName",userName)
                 .withExpiresAt(date).sign(algorithm);
     }
 
 
-    public static void authToken(String token){
+    public static Map<String,String> authToken(String token){
         try {
             Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);
             JWTVerifier verifier = JWT.require(algorithm).build();
             DecodedJWT jwt = verifier.verify(token);
-            System.out.println(jwt.getClaim("user").asString());
+            Map<String,String> map=new HashMap<>();
+            map.put("userId",jwt.getClaim("userId").asString());
+            map.put("userName",jwt.getClaim("userName").asString());
+            logger.info("token-->"+token+",map->"+map);
+            return map;
         } catch (IllegalArgumentException e) {
             throw new TokenAuthErrorException(e.getMessage()+"--1");
         } catch (JWTVerificationException e) {
@@ -74,13 +76,4 @@ public class JwtUtil {
 
     }
 
-    public static Map<String,Object> getUserByToken(String token){
-        Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);
-        JWTVerifier verifier = JWT.require(algorithm).build();
-        DecodedJWT jwt = verifier.verify(token);
-
-        String user = jwt.getClaim("user").asString();
-        return JSON.parseObject(user,HashMap.class);
-
-    }
 }
