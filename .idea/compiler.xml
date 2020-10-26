@@ -12,6 +12,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="construction-app-mgnt" target="1.8" />
       <module name="mgnt-api" target="1.8" />
       <module name="mgnt-dao" target="1.8" />
       <module name="mgnt-service" target="1.8" />
@@ -19,6 +20,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="construction-app-mgnt" options="-parameters" />
       <module name="mgnt-api" options="-parameters" />
       <module name="mgnt-dao" options="-parameters" />
       <module name="mgnt-service" options="-parameters" />

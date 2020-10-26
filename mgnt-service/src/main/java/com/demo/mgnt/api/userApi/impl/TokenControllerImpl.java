@@ -33,8 +33,6 @@ public class TokenControllerImpl implements TokenController {
     @Override
     public RestResponse<String> generateTokenAndUpdateUser(UserReqDto userReqDto) {
         String token = JwtUtil.sign(userReqDto.getId(), userReqDto.getName());
-        System.out.println(token);
-        System.out.println(userReqDto.getId());
         userService.updateTokenById(userReqDto.getId(),token);
         return new RestResponse<>(token);
     }

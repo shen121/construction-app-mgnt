@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mgnt-api:war">
+    <output-path>$PROJECT_DIR$/mgnt-api/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>mgnt-api</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="mgnt-api-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="mgnt-api:war exploded" />
+    </root>
+  </artifact>
+</component>
