@@ -5,6 +5,7 @@ import com.demo.mgnt.api.util.RestResponse;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import java.util.List;
  */
 @Api(tags = "用户管理api")
 @RequestMapping("/v1/mgnt/user")
+@FeignClient(name = "${com.demo.mgnt.name}",url = "${com.demo.mgnt.url}")
 public interface UserController {
 
     @GetMapping("/{id}")

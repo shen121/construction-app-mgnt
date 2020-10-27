@@ -23,14 +23,6 @@ public class TokenControllerImpl implements TokenController {
     }
 
     @Override
-    public RestResponse<String> resetToken(String token) {
-        Map<String, String> map = JwtUtil.authToken(token);
-        String newToken = JwtUtil.sign(Long.valueOf(map.get("userId")), map.get("userName"));
-        userService.updateTokenById(Long.valueOf(map.get("userId")),newToken);
-        return new RestResponse<>(newToken);
-    }
-
-    @Override
     public RestResponse<String> generateTokenAndUpdateUser(UserReqDto userReqDto) {
         String token = JwtUtil.sign(userReqDto.getId(), userReqDto.getName());
         userService.updateTokenById(userReqDto.getId(),token);
