@@ -1,6 +1,14 @@
 spring:
   profiles:
     active: dev
+  activemq:
+    user: admin
+    password: admin
+    broker-url: tcp://127.0.0.1:61616/
+    pool:
+      enabled: true
+      max-connections: 10
+
 
 mybatis:
   mapper-locations: classpath:mybatis-mapper/*/*.xml
